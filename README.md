@@ -4,16 +4,16 @@ An easily executable `Panel` and `Pyscript` based interactive simulation of Equi
 
 ### How to use?
 
-- For offline users, download the `src` folder, the files within it and `pyscript-local.html` file. Open `pyscript-local.html` and enjoy learning!
+- For offline users, download the `src` folder, the files within it and `pyscript-local-equivalent_circuit.html` file. Open `pyscript-local-equivalent_circuit.html` and enjoy learning!
 
-- For online users, download the `pyscript-remote.html` file. Open `pyscript-local.html` and enjoy learning!
+- For online users, download the `pyscript-remote-equivalent_circuit.html` file. Open `pyscript-remote-equivalent_circuit.html` and enjoy learning!
 
 
 ### How was the `.html` file created?
 
-`script.py` is first made with the help of `jupyter`. Then, the `script.py` is then transformed to `.html` file using `panel convert script.py --to pyscript --out`. This creates a `script.html` file in the current folder (here known as `pyscript-remote.html`.
+`script.py` is first made with the help of `jupyter`. Then, the `script.py` is then transformed to `.html` file using `panel convert script.py --to pyscript --out`. This creates a `script.html` file in the current folder (here known as `pyscript-remote-equivalent_circuit.html`.
 
-However, this `pyscript-remote.html` file uses remotely stored `.js` files for the `.html` file execution. This is corrected for by downloading and storing the `.js` files in a folder called `src`, and the raw `pyscript-remote.html` is edited manually in a script editor to (`pyscript-local.html`) use locally stored `.js` files from `src` folder.
+However, this `pyscript-remote-equivalent_circuit.html` file uses remotely stored `.js` files for the `.html` file execution. This is corrected for by downloading and storing the `.js` files in a folder called `src`, and the raw `pyscript-remote-equivalent_circuit.html` is edited manually in a script editor to (`pyscript-local-equivalent_circuit.html`) use locally stored `.js` files from `src` folder.
 
 
 ### References
