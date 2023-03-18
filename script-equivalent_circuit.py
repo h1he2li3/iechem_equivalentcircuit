@@ -45,6 +45,10 @@ pts_per_decade = pn.widgets.EditableFloatSlider(start=1, end=15, value=12,
                                                     format='%.0f'),
                                                 bar_color='#000000')
 
+Line_and_Markers_Checkbox = pn.widgets.Checkbox(
+    name='Check the box to display \'Line along with Markers\'', value=True)
+
+
 plot1width = pn.widgets.EditableIntSlider(start=200, end=800, value=525,
                                           step=25,
                                           format=PrintfTickFormatter(
@@ -264,11 +268,11 @@ def z_r0_r1c1(r0, r1, c1, w):
             plot2width.param.value, plot2height.param.value,
             plot_properties_radio.param.value, reset_button.param.value,
             plot1_range_axis.param.value, plot2_range_xaxis.param.value,
-            plot2_range_yaxis.param.value)
+            plot2_range_yaxis.param.value, Line_and_Markers_Checkbox.param.value)
 def z(r0, r1, c1, fstart, fstop, pts_per_decade,
       plot1width, plot1height, plot2width, plot2height,
       setting, reset, plot1_range_axis,
-      plot2_range_xaxis, plot2_range_yaxis):
+      plot2_range_xaxis, plot2_range_yaxis, line_and_markers_checkbox):
     """
     Returns the complex plane/nyquist plot and bode plot, reset the
     plot properties mode, reset all sliders to their default state.
@@ -325,7 +329,11 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
                    plot_height=plot1height,
                    x_range=(plot1_x_left, plot1_x_right),
                    y_range=(plot1_y_bottom, plot1_y_top))
-    plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
+    plot1.circle('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
+    if line_and_markers_checkbox is True:
+        plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
+        plot1.circle('x', 'y', source=plot1_nyquist,
+                     line_width=2, color="blue")
     plot2 = figure(name='Plot 2', title="Bode Plot",
                    tools="pan,wheel_zoom, box_zoom, reset, save, box_select",
                    x_axis_type="log", y_axis_type="linear",
@@ -334,7 +342,12 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
                    plot_height=plot2height,
                    x_range=(plot2_x_left, plot2_x_right),
                    y_range=(plot2_y_bottom, plot2_y_top))
-    plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
+    plot2.circle('x', 'y', source=plot2_bode, line_width=2, color="blue")
+    if line_and_markers_checkbox is True:
+        plot2.line('x', 'y', source=plot2_bode,
+                   line_width=2, color="blue")
+        plot2.circle('x', 'y', source=plot2_bode,
+                     line_width=2, color="blue")
 
     if setting == 'Default':
         plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
@@ -344,7 +357,13 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
                        plot_height=plot1height,
                        x_range=(plot1_x_left, plot1_x_right),
                        y_range=(plot1_y_bottom, plot1_y_top))
-        plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
+        plot1.circle('x', 'y', source=plot1_nyquist,
+                     line_width=2, color="blue")
+        if line_and_markers_checkbox is True:
+            plot1.line('x', 'y', source=plot1_nyquist,
+                       line_width=2, color="blue")
+            plot1.circle('x', 'y', source=plot1_nyquist,
+                         line_width=2, color="blue")
         plot2 = figure(name='Plot 2', title="Bode Plot",
                        tools="pan,wheel_zoom,box_zoom,reset,save,box_select",
                        x_axis_type="log", y_axis_type="linear",
@@ -352,7 +371,12 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
                        y_axis_label='-Z Imaginary [Ohm]',
                        y_range=(plot2_y_bottom, plot2_y_top),
                        plot_height=plot2height)
-        plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
+        plot2.circle('x', 'y', source=plot2_bode, line_width=2, color="blue")
+        if line_and_markers_checkbox is True:
+            plot2.line('x', 'y', source=plot2_bode,
+                       line_width=2, color="blue")
+            plot2.circle('x', 'y', source=plot2_bode,
+                         line_width=2, color="blue")
 
     return pn.Column(pn.Tabs(plot1, width=plot1width,
                              height=plot1height + 30, closable=True),
@@ -446,7 +470,7 @@ def changing_variables(reset):
 
 # ------------
 Info = z
-plot_properties = pn.Column(plot_properties_Markdown, plot_properties_radio,
+plot_properties = pn.Column(Line_and_Markers_Checkbox, plot_properties_Markdown, plot_properties_radio,
                             set_and_reset_plot_size_and_limits)
 
 pn.template.GoldenTemplate(accent_base_color='#008835',
