@@ -24,7 +24,8 @@ r1 = pn.widgets.EditableFloatSlider(start=1, end=40, value=20, step=0.5,
                                         format='%.1f Ohm'),
                                     bar_color='#ff0000')
 c1 = pn.widgets.EditableFloatSlider(start=1e-6, end=1e-4, value=1e-5, step=1e-6,
-                                    format=PrintfTickFormatter(format='%.6f F'),
+                                    format=PrintfTickFormatter(
+                                        format='%.6f F'),
                                     bar_color='#ff00ff')
 
 fstart = pn.widgets.EditableFloatSlider(start=1000 / 2, end=10000000,
@@ -66,21 +67,21 @@ plot2height = pn.widgets.EditableIntSlider(start=200, end=800, value=400,
                                            bar_color='#808080', max_width=400)
 
 range_setting = np.logspace(np.log10(fstart.value), np.log10(fstop.value), (
-        int((np.log10(fstart.value) - np.log10(fstop.value))) * 12))
+    int((np.log10(fstart.value) - np.log10(fstop.value))) * 12))
 
 plot1_range_axis = pn.widgets.EditableRangeSlider(start=0, end=80, step=1,
-                                          value=(0, 60),
-                                          format=PrintfTickFormatter(
-                                              format='%.1f Ohm'),
-                                          bar_color='#ff0000')
+                                                  value=(0, 60),
+                                                  format=PrintfTickFormatter(
+                                                      format='%.1f Ohm'),
+                                                  bar_color='#ff0000')
 plot2_range_xaxis = pn.widgets.EditableRangeSlider(start=min(range_setting),
-                                           end=max(range_setting),
-                                           step=0.0001,
-                                           value=(min(range_setting),
-                                                  max(range_setting)),
-                                           format=PrintfTickFormatter(
-                                               format='%.1f Hz'),
-                                           bar_color='#ff0000')
+                                                   end=max(range_setting),
+                                                   step=0.0001,
+                                                   value=(min(range_setting),
+                                                          max(range_setting)),
+                                                   format=PrintfTickFormatter(
+    format='%.1f Hz'),
+    bar_color='#ff0000')
 plot2_range_yaxis = pn.widgets.EditableRangeSlider(start=0, end=80,
                                                    step=1,
                                                    value=(0, 60),
@@ -106,7 +107,8 @@ fstart_Markdown = pn.pane.Markdown("Start frequency: $$f_{start}$$""")
 fstop_Markdown = pn.pane.Markdown(
     """Stop frequency: $$f_{stop}$$""")
 pts_per_decade_Markdown = pn.pane.Markdown("""Points per decade:""")
-Slider_Markdown_heading = pn.pane.Markdown('### Editable Sliders for Variables')
+Slider_Markdown_heading = pn.pane.Markdown(
+    '### Editable Sliders for Variables')
 
 # Creation of Markdowns for other parts
 # ------------
@@ -316,7 +318,7 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
     plot1_nyquist = ColumnDataSource(data=dict(x=z.real, y=-1 * z.imag))
     plot2_bode = ColumnDataSource(data=dict(x=w / (2 * np.pi), y=-1 * z.imag))
 
-    plot1 = figure(name='Plot 1', title="Nyquist Plot",
+    plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
                    tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
                    x_axis_label="Z Real [Ohm]",
                    y_axis_label="-Z Imaginary [Ohm]",
@@ -335,7 +337,7 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
     plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
 
     if setting == 'Default':
-        plot1 = figure(name='Plot 1', title="Nyquist Plot",
+        plot1 = figure(name='Plot 1', title="Nyquist Plot",  aspect_ratio=1/1,
                        tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
                        x_axis_label="Z Real [Ohm]",
                        y_axis_label="-Z Imaginary [Ohm]",
@@ -401,11 +403,11 @@ def set_and_reset_plot_size_and_limits(setting, reset):
                                   header_background='#008835',
                                   active_header_background='#008835'),
                      '### Plot range', pn.Accordion(
-            ('Nyquist plot limits', plot1_limits),
-            ('Bode plot x-axis limits', plot2_xlimits),
-            ('Bode plot y-axis limits', plot2_ylimits), max_width=600,
-            header_color='#FFFFFF', header_background='#008835',
-            active_header_background='#008835'))
+                         ('Nyquist plot limits', plot1_limits),
+                         ('Bode plot x-axis limits', plot2_xlimits),
+                         ('Bode plot y-axis limits', plot2_ylimits), max_width=600,
+                         header_color='#FFFFFF', header_background='#008835',
+                         active_header_background='#008835'))
 
 
 # Function 8 (I-1) to Display and Update all butler-volmer current slider variables
@@ -453,4 +455,4 @@ pn.template.GoldenTemplate(accent_base_color='#008835',
                            title=" Equivalent Circuit 'R0-(R1,C1)'",
                            sidebar=[Info_Markdown, changing_variables,
                                     reset_button, plot_properties],
-                           main=[Info]).servable(target='simple_app')
+                           main=[Info]).show(target='simple_app')
