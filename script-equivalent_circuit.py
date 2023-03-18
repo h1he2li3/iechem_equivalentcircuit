@@ -479,4 +479,4 @@ pn.template.GoldenTemplate(accent_base_color='#008835',
                            title=" Equivalent Circuit 'R0-(R1,C1)'",
                            sidebar=[Info_Markdown, changing_variables,
                                     reset_button, plot_properties],
-                           main=[Info]).show(target='simple_app')
+                           main=[Info]).servable(target='simple_app')
