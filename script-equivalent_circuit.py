@@ -337,7 +337,7 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
     plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
 
     if setting == 'Default':
-        plot1 = figure(name='Plot 1', title="Nyquist Plot",  aspect_ratio=1/1,
+        plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
                        tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
                        x_axis_label="Z Real [Ohm]",
                        y_axis_label="-Z Imaginary [Ohm]",

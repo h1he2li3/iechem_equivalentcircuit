@@ -1,155 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title> Equivalent Circuit &#39;R0-(R1,C1)&#39;</title>
-<link rel="icon" href="https://panel.holoviz.org/_static/icons/favicon.ico" type=""><meta name="name" content=" Equivalent Circuit 'R0-(R1,C1)'">    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/debugger.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/alerts.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/card.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/widgets.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/markdown.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/json.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/loading.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/dataframe.css" type="text/css" />
-    <style>
-        
+
+<head>
+  <meta charset="utf-8">
+  <title> Equivalent Circuit &#39;R0-(R1,C1)&#39;</title>
+  <link rel="icon" href="https://panel.holoviz.org/_static/icons/favicon.ico" type="">
+  <meta name="name" content=" Equivalent Circuit 'R0-(R1,C1)'">
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/debugger.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/alerts.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/card.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/widgets.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/markdown.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/json.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/loading.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/css/dataframe.css" type="text/css" />
+  <style>
     .bk.pn-loading.arc:before {
       background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=");
       background-size: auto calc(min(50%, 400px));
     }
-    
-    </style>
-<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.3.min.js"></script><script type="text/javascript" src="https://cdn.holoviz.org/panel/0.14.2/dist/panel.min.js"></script><script type="text/javascript">
+  </style>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.holoviz.org/panel/0.14.2/dist/panel.min.js"></script>
+  <script type="text/javascript">
     Bokeh.set_log_level("info");
-</script>
-<script defer src="https://pyscript.net/releases/2022.09.1/pyscript.js"></script><!-- Template CSS -->
-<link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/css/golden-layout@1.5.9/src/css/goldenlayout-base.css">
-<link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/goldentemplate/golden.css">
-<link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/defaulttheme/default.css">
-<link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/goldentemplate/default.css">
+  </script>
+  <script defer src="https://pyscript.net/releases/2022.09.1/pyscript.js"></script><!-- Template CSS -->
+  <link rel="stylesheet"
+    href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/css/golden-layout@1.5.9/src/css/goldenlayout-base.css">
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/goldentemplate/golden.css">
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/defaulttheme/default.css">
+  <link rel="stylesheet" href="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/goldentemplate/default.css">
 
-<!-- Template JS -->
-<script src="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/jquery/jquery.slim.min.js"></script>
-<script src="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/js/golden-layout@1.5.9/dist/goldenlayout.min.js"></script>
-  </head>
-  <body class="bk pn-loading arc">
-<header class="app-bar" id="header" style="background-color: #008835 !important;">
-  <div style="display: contents;">
-    <div class="app-header">
-<a class="title" href="/" >Interactive Electrochemistry</a><span class="title">-</span><a class="title" href=""> Equivalent Circuit 'R0-(R1,C1)'</a>    </div>
-	<section class="header-contents">
-    </section>
-	<div class="pn-busy-container">
-	  <div class="bk-root" id="dfdec5b1-9178-4589-89c8-db3ef2371f75" data-root-id="1182"></div>
-	</div>
+  <!-- Template JS -->
+  <script src="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/jquery/jquery.slim.min.js"></script>
+  <script
+    src="https://cdn.holoviz.org/panel/0.14.2/dist/bundled/js/golden-layout@1.5.9/dist/goldenlayout.min.js"></script>
+</head>
+
+<body class="bk pn-loading arc">
+  <header class="app-bar" id="header" style="background-color: #008835 !important;">
+    <div style="display: contents;">
+      <div class="app-header">
+        <a class="title" href="/">Interactive Electrochemistry</a><span class="title">-</span><a class="title" href="">
+          Equivalent Circuit 'R0-(R1,C1)'</a>
+      </div>
+      <section class="header-contents">
+      </section>
+      <div class="pn-busy-container">
+        <div class="bk-root" id="dfdec5b1-9178-4589-89c8-db3ef2371f75" data-root-id="1182"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-area header-adjust" id="main">
+    <main class="main-content" id="main-content"></main>
+    <div id="pn-Modal" class="pn-modal header-adjust">
+      <div class="pn-modal-content">
+        <span class="pn-modalclose" id="pn-closeModal">&times;</span>
+      </div>
+    </div>
   </div>
-</header>
 
-<div class="main-area header-adjust" id="main">
-  <main class="main-content" id="main-content"></main>
-  <div id="pn-Modal" class="pn-modal header-adjust">
-	<div class="pn-modal-content">
-	  <span class="pn-modalclose" id="pn-closeModal">&times;</span>
-	</div>
-  </div>
-</div>
-
-<script>
-  var config = {
-    content: [
-      {
-        type: 'row',
-        content: [
-          {
-            type: 'component',
-            componentName: 'view',
-            componentState: {
-              title: "Sidebar",
-              model: '<div class="sidebar-contents"> <div class="bk-root" id="fe0a9e72-9dc1-4ec3-aac7-20a146f7d102" data-root-id="1255"></div>  <div class="bk-root" id="d5e4f697-692b-44d5-8527-4deccf96fc86" data-root-id="1278"></div>  <div class="bk-root" id="a80a8dec-0bdb-43fc-86dd-1b71adeb1236" data-root-id="1348"></div>  <div class="bk-root" id="8b63135a-0591-433d-a406-483a9b96be41" data-root-id="1371"></div> </div>'
-            },
-            width: 20,
-            isClosable: false
-          },
-          {
-            type: 'stack',
-            width: 100-20,
-            content: [
-              {
-                type: 'component',
-                componentName: 'view',
-                componentState: {
-                  model: '<div class="bk-root" id="e8513985-6970-4ed3-ac0a-8e00b4be9cb0" data-root-id="1183"></div>',
-                  title: ""
-                },
+  <script>
+    var config = {
+      content: [
+        {
+          type: 'row',
+          content: [
+            {
+              type: 'component',
+              componentName: 'view',
+              componentState: {
+                title: "Sidebar",
+                model: '<div class="sidebar-contents"> <div class="bk-root" id="fe0a9e72-9dc1-4ec3-aac7-20a146f7d102" data-root-id="1255"></div>  <div class="bk-root" id="d5e4f697-692b-44d5-8527-4deccf96fc86" data-root-id="1278"></div>  <div class="bk-root" id="a80a8dec-0bdb-43fc-86dd-1b71adeb1236" data-root-id="1348"></div>  <div class="bk-root" id="8b63135a-0591-433d-a406-483a9b96be41" data-root-id="1371"></div> </div>'
               },
-            ]
-          }
-        ]
+              width: 20,
+              isClosable: false
+            },
+            {
+              type: 'stack',
+              width: 100 - 20,
+              content: [
+                {
+                  type: 'component',
+                  componentName: 'view',
+                  componentState: {
+                    model: '<div class="bk-root" id="e8513985-6970-4ed3-ac0a-8e00b4be9cb0" data-root-id="1183"></div>',
+                    title: ""
+                  },
+                },
+              ]
+            }
+          ]
+        }
+      ],
+      settings: {
+        showPopoutIcon: false
       }
-    ],
-    settings: {
-      showPopoutIcon: false
+    };
+
+    var myLayout = new GoldenLayout(config, $('#main-content'));
+    var resizing = false;
+    var resize_dispatcher = () => {
+      resizing = true;
+      window.dispatchEvent(new Event("resize"))
+      resizing = false;
     }
-  };
+    myLayout.registerComponent('view', function (container, componentState) {
+      const { width, css_classes } = componentState
+      if (width) {
+        container.on('open', () => container.setSize(width, container.height))
+      }
+      if (css_classes) {
+        css_classes.map((item) => container.getElement().addClass(item))
+      }
+      container.setTitle(componentState.title)
+      container.getElement().html(componentState.model);
+      container.on("resize", resize_dispatcher)
+    })
 
-  var myLayout = new GoldenLayout(config, $('#main-content'));
-  var resizing = false;
-  var resize_dispatcher = () => {
-    resizing = true;
-    window.dispatchEvent(new Event("resize"))
-    resizing = false;
-  }
-  myLayout.registerComponent('view', function( container, componentState ) {
-    const {width, css_classes} = componentState
-    if (width) {
-      container.on('open', () => container.setSize(width, container.height))
-    }
-    if (css_classes) {
-      css_classes.map((item) => container.getElement().addClass(item))
-    }
-    container.setTitle(componentState.title)
-    container.getElement().html(componentState.model);
-    container.on("resize", resize_dispatcher)
-  })
+    // Absolute hackery to get GoldenLayout to initialize even though
+    // document is not ready. Without this bokeh will complain that
+    // DOM nodes to render roots into are not initialized in time.
+    Object.defineProperty(document, 'readyState', {
+      get() { return readyState },
+      set(value) { return readyState = value },
+    });
+    document.readyState = 'complete'
 
-  // Absolute hackery to get GoldenLayout to initialize even though
-  // document is not ready. Without this bokeh will complain that
-  // DOM nodes to render roots into are not initialized in time.
-  Object.defineProperty(document, 'readyState', {
-    get() { return readyState },
-    set(value) { return readyState = value },
-  });
-  document.readyState = 'complete'
+    myLayout.init()
+    window.addEventListener('resize', (event) => {
+      if (!resizing) {
+        myLayout.updateSize($('#main-content').width(), $('#main-content').height())
+      }
+    });
 
-  myLayout.init()
-  window.addEventListener('resize', (event) => {
-    if (!resizing) {
-      myLayout.updateSize($('#main-content').width(), $('#main-content').height())
-    }
-  });
+    var modal = document.getElementById("pn-Modal");
+    var span = document.getElementById("pn-closeModal");
 
-  var modal = document.getElementById("pn-Modal");
-  var span = document.getElementById("pn-closeModal");
-
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
+    span.onclick = function () {
       modal.style.display = "none";
     }
-  }
-</script>
 
-<div class="bk-root" id="52076b7f-384f-4940-aa3e-63506fd0a33f" data-root-id="1179"></div>
-<div class="bk-root" id="b52a8c8b-321d-4c7b-898c-76d6d730961a" data-root-id="1181"></div>
-<div class="bk-root" id="3f91fe98-ef84-4e11-a7c2-b5f7b1746963" data-root-id="1177"></div>
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <div class="bk-root" id="52076b7f-384f-4940-aa3e-63506fd0a33f" data-root-id="1179"></div>
+  <div class="bk-root" id="b52a8c8b-321d-4c7b-898c-76d6d730961a" data-root-id="1181"></div>
+  <div class="bk-root" id="3f91fe98-ef84-4e11-a7c2-b5f7b1746963" data-root-id="1177"></div>
 
   <py-config>
-    packages = ['https://cdn.holoviz.org/panel/0.14.2/dist/wheels/bokeh-2.4.3-py3-none-any.whl','https://cdn.holoviz.org/panel/0.14.2/dist/wheels/panel-0.14.2-py3-none-any.whl','pyodide-http==0.1.0','numpy']
-    </py-config>
-    <py-script>
+    packages =
+    ['https://cdn.holoviz.org/panel/0.14.2/dist/wheels/bokeh-2.4.3-py3-none-any.whl','https://cdn.holoviz.org/panel/0.14.2/dist/wheels/panel-0.14.2-py3-none-any.whl','pyodide-http==0.1.0','numpy']
+  </py-config>
+  <py-script>
     import asyncio
 
     from panel.io.pyodide import init_doc, write_doc
@@ -174,95 +187,95 @@
     # Creation of sliders, radio and toggle buttons, etc.
     # ------------
     r0 = pn.widgets.EditableFloatSlider(start=1, end=20, value=10, step=0.5,
-                                        format=PrintfTickFormatter(
-                                            format='%.1f Ohm'),
-                                        bar_color='#ff0000')
+    format=PrintfTickFormatter(
+    format='%.1f Ohm'),
+    bar_color='#ff0000')
     r1 = pn.widgets.EditableFloatSlider(start=1, end=40, value=20, step=0.5,
-                                        format=PrintfTickFormatter(
-                                            format='%.1f Ohm'),
-                                        bar_color='#ff0000')
+    format=PrintfTickFormatter(
+    format='%.1f Ohm'),
+    bar_color='#ff0000')
     c1 = pn.widgets.EditableFloatSlider(start=1e-6, end=1e-4, value=1e-5, step=1e-6,
-                                        format=PrintfTickFormatter(format='%.6f F'),
-                                        bar_color='#ff00ff')
+    format=PrintfTickFormatter(format='%.6f F'),
+    bar_color='#ff00ff')
 
     fstart = pn.widgets.EditableFloatSlider(start=1000 / 2, end=10000000,
-                                            value=9685000, step=500,
-                                            format=PrintfTickFormatter(
-                                                format='%.0f Hz'),
-                                            bar_color='#3339ff')
+    value=9685000, step=500,
+    format=PrintfTickFormatter(
+    format='%.0f Hz'),
+    bar_color='#3339ff')
     fstop = pn.widgets.EditableFloatSlider(start=1000000 / 10000000, end=1000 / 2,
-                                           value=0.09685000, step=0.001 / 2,
-                                           format=PrintfTickFormatter(
-                                               format='%.3f Hz'),
-                                           bar_color='#3339ff')
+    value=0.09685000, step=0.001 / 2,
+    format=PrintfTickFormatter(
+    format='%.3f Hz'),
+    bar_color='#3339ff')
 
     pts_per_decade = pn.widgets.EditableFloatSlider(start=1, end=15, value=12,
-                                                    step=1,
-                                                    format=PrintfTickFormatter(
-                                                        format='%.0f'),
-                                                    bar_color='#000000')
+    step=1,
+    format=PrintfTickFormatter(
+    format='%.0f'),
+    bar_color='#000000')
 
     plot1width = pn.widgets.EditableIntSlider(start=200, end=800, value=525,
-                                              step=25,
-                                              format=PrintfTickFormatter(
-                                                  format='%.0f #unit'),
-                                              bar_color='#808080', max_width=400)
+    step=25,
+    format=PrintfTickFormatter(
+    format='%.0f #unit'),
+    bar_color='#808080', max_width=400)
     plot2width = pn.widgets.EditableIntSlider(start=200, end=800, value=525,
-                                              step=25,
-                                              format=PrintfTickFormatter(
-                                                  format='%.0f #unit'),
-                                              bar_color='#808080', max_width=400)
+    step=25,
+    format=PrintfTickFormatter(
+    format='%.0f #unit'),
+    bar_color='#808080', max_width=400)
     plot1height = pn.widgets.EditableIntSlider(start=200, end=800, value=400,
-                                               step=25,
-                                               format=PrintfTickFormatter(
-                                                   format='%.0f #unit'),
-                                               bar_color='#808080', max_width=400)
+    step=25,
+    format=PrintfTickFormatter(
+    format='%.0f #unit'),
+    bar_color='#808080', max_width=400)
     plot2height = pn.widgets.EditableIntSlider(start=200, end=800, value=400,
-                                               step=25,
-                                               format=PrintfTickFormatter(
-                                                   format='%.0f #unit'),
-                                               bar_color='#808080', max_width=400)
+    step=25,
+    format=PrintfTickFormatter(
+    format='%.0f #unit'),
+    bar_color='#808080', max_width=400)
 
     range_setting = np.logspace(np.log10(fstart.value), np.log10(fstop.value), (
-            int((np.log10(fstart.value) - np.log10(fstop.value))) * 12))
+    int((np.log10(fstart.value) - np.log10(fstop.value))) * 12))
 
     plot1_range_axis = pn.widgets.EditableRangeSlider(start=0, end=80, step=1,
-                                              value=(0, 60),
-                                              format=PrintfTickFormatter(
-                                                  format='%.1f Ohm'),
-                                              bar_color='#ff0000')
+    value=(0, 60),
+    format=PrintfTickFormatter(
+    format='%.1f Ohm'),
+    bar_color='#ff0000')
     plot2_range_xaxis = pn.widgets.EditableRangeSlider(start=min(range_setting),
-                                               end=max(range_setting),
-                                               step=0.0001,
-                                               value=(min(range_setting),
-                                                      max(range_setting)),
-                                               format=PrintfTickFormatter(
-                                                   format='%.1f Hz'),
-                                               bar_color='#ff0000')
+    end=max(range_setting),
+    step=0.0001,
+    value=(min(range_setting),
+    max(range_setting)),
+    format=PrintfTickFormatter(
+    format='%.1f Hz'),
+    bar_color='#ff0000')
     plot2_range_yaxis = pn.widgets.EditableRangeSlider(start=0, end=80,
-                                                       step=1,
-                                                       value=(0, 60),
-                                                       format=PrintfTickFormatter(
-                                                           format='%.5f Ohm'),
-                                                       bar_color='#ff0000')
+    step=1,
+    value=(0, 60),
+    format=PrintfTickFormatter(
+    format='%.5f Ohm'),
+    bar_color='#ff0000')
 
     reset_button = pn.widgets.Toggle(name='Press me twice to Reset',
-                                     button_type='danger')
+    button_type='danger')
     plot_properties_radio = pn.widgets.RadioButtonGroup(name='Radio Button Group',
-                                                        options=['Default',
-                                                                 'Manual'],
-                                                        button_type='success',
-                                                        max_width=600)
+    options=['Default',
+    'Manual'],
+    button_type='success',
+    max_width=600)
 
     # Creation of Markdowns for sliders, radio and toggle buttons, etc.
     # ------------
     r0_Markdown = pn.pane.Markdown("""Ohmic (or) Solution resistance: $$R_0$$""")
     r1_Markdown = pn.pane.Markdown(
-        r"""Reaction resistance: $$R_1$$""")
+    r"""Reaction resistance: $$R_1$$""")
     c1_Markdown = pn.pane.Markdown("""Double layer capacitance: $$C_1$$""")
     fstart_Markdown = pn.pane.Markdown("Start frequency: $$f_{start}$$""")
     fstop_Markdown = pn.pane.Markdown(
-        """Stop frequency: $$f_{stop}$$""")
+    """Stop frequency: $$f_{stop}$$""")
     pts_per_decade_Markdown = pn.pane.Markdown("""Points per decade:""")
     Slider_Markdown_heading = pn.pane.Markdown('### Editable Sliders for Variables')
 
@@ -271,11 +284,14 @@
     Info_Markdown = pn.pane.Markdown("""
     ##Equivalent Circuit 'R0-p(R1,C1)'
 
-    Elements in series are separated by a dash '**-**', and those in parallel are written in '**p( , )**', where elements are separated by a comma '**,**'.
+    Elements in series are separated by a dash '**-**', and those in parallel are written in '**p( , )**', where
+    elements are separated by a comma '**,**'.
 
     Here, an interactive visualization for the equivalent circuit '**R0-p(R1,C1)**' is presented.
 
-    All the elements are grouped under '*System / Observation Parameters*' dropdown and can be varied. Start, stop frequencies, and resolution of measurement can be adjusted using sliders present under a second '*Measurement Parameters*' dropdown.
+    All the elements are grouped under '*System / Observation Parameters*' dropdown and can be varied. Start, stop
+    frequencies, and resolution of measurement can be adjusted using sliders present under a second '*Measurement
+    Parameters*' dropdown.
 
     ---
     $$ Z_{R_{0}} = R_{0}$$
@@ -292,7 +308,8 @@
     ---
     """)
     plot_properties_Markdown = pn.pane.Markdown("""
-    #### Use the below radio button group to choose between 'Default' and 'Manual' setting for plot properties - size and range
+    #### Use the below radio button group to choose between 'Default' and 'Manual' setting for plot properties - size
+    and range
     """)
 
 
@@ -301,220 +318,220 @@
     # Function 1 (I-0) to Generate angular frequency range
     # ------------
     def ang_freq_range(fstart, fstop, pts_per_decade):
-        """returns an angular frequency range as a numpy array,
-           between fstart [Hz] and fstop [Hz], with a set number
-           of points per decade"""
-        decades = np.log10(fstart) - np.log10(fstop)
-        pts_total = np.around(decades * pts_per_decade)
-        frange = np.logspace(np.log10(fstop), np.log10(fstart), num=int(pts_total),
-                             endpoint=True)
-        return 2 * np.pi * frange
-        # ------------#
+    """returns an angular frequency range as a numpy array,
+    between fstart [Hz] and fstop [Hz], with a set number
+    of points per decade"""
+    decades = np.log10(fstart) - np.log10(fstop)
+    pts_total = np.around(decades * pts_per_decade)
+    frange = np.logspace(np.log10(fstop), np.log10(fstart), num=int(pts_total),
+    endpoint=True)
+    return 2 * np.pi * frange
+    # ------------#
 
 
     # Function 2 (I-0) to Reset all sliders to their default state
     # ------------
     def reset_variable_values():
-        """
-        Returns pre-fixed default non-plot property slider values,
-        which replaces the existing variable values in the calling function
+    """
+    Returns pre-fixed default non-plot property slider values,
+    which replaces the existing variable values in the calling function
 
-        Input
-        =====
-        none
+    Input
+    =====
+    none
 
-        Output
-        =====
-        default non-plot property slider values to overwrite existing ones in the
-        calling function
-        """
-        r0.value = 10
-        r1.value = 20
-        c1.value = 1e-5
-        fstart.value = 9685000
-        fstop.value = 0.09685
-        pts_per_decade.value = 12
-        return r0.value, r1.value, c1.value, fstart.value, fstop.value, pts_per_decade.value
-        # ------------#
+    Output
+    =====
+    default non-plot property slider values to overwrite existing ones in the
+    calling function
+    """
+    r0.value = 10
+    r1.value = 20
+    c1.value = 1e-5
+    fstart.value = 9685000
+    fstop.value = 0.09685
+    pts_per_decade.value = 12
+    return r0.value, r1.value, c1.value, fstart.value, fstop.value, pts_per_decade.value
+    # ------------#
 
 
     # Function 3 (I-0) to Reset the plot property sliders i.e., size
     # ------------
     def reset_plot_size_values():
-        """
-        Returns pre-fixed default plot size slider values,
-        which replaces the existing plot size values in the calling function.
+    """
+    Returns pre-fixed default plot size slider values,
+    which replaces the existing plot size values in the calling function.
 
-        Input
-        =====
-        none
+    Input
+    =====
+    none
 
-        Output
-        =====
-        default plot size slider values to overwrite existing ones in the calling
-        function
-        """
-        plot1width.value = 525
-        plot1height.value = 400
-        plot2width.value = 525
-        plot2height.value = 400
-        return plot1width.value, plot1height.value, plot2width.value, plot2height.value
-        # ------------#
+    Output
+    =====
+    default plot size slider values to overwrite existing ones in the calling
+    function
+    """
+    plot1width.value = 525
+    plot1height.value = 400
+    plot2width.value = 525
+    plot2height.value = 400
+    return plot1width.value, plot1height.value, plot2width.value, plot2height.value
+    # ------------#
 
 
     # Function 4 (I-0) to Reset the plot property sliders i.e., plot range
     # ------------
     def reset_plot_range_values():
-        """
-        Returns pre-fixed default plot range slider values,
-        which replaces the existing plot range values in the calling function
+    """
+    Returns pre-fixed default plot range slider values,
+    which replaces the existing plot range values in the calling function
 
-        Input
-        =====
-        none
+    Input
+    =====
+    none
 
-        Output
-        =====
-        default plot range slider values to overwrite existing ones in the calling
-        function
-        """
+    Output
+    =====
+    default plot range slider values to overwrite existing ones in the calling
+    function
+    """
 
-        plot1_range_axis.value = (0, 60)
-        plot2_range_xaxis.value = (min(range_setting), max(range_setting))
-        plot2_range_yaxis.value = (0, 60)
-        return plot1_range_axis.value, plot2_range_xaxis.value, plot2_range_yaxis.value
-        # ------------#
+    plot1_range_axis.value = (0, 60)
+    plot2_range_xaxis.value = (min(range_setting), max(range_setting))
+    plot2_range_yaxis.value = (0, 60)
+    return plot1_range_axis.value, plot2_range_xaxis.value, plot2_range_yaxis.value
+    # ------------#
 
 
     # Function 5 (I-0) to Return the calculated complex impedance of the circuit
     # ------------
     def z_r0_r1c1(r0, r1, c1, w):
-        """
-        Returns the impedance of a 'R0-p(R1,C1)' circuit.
+    """
+    Returns the impedance of a 'R0-p(R1,C1)' circuit.
 
-        Input
-        =====
-        R0 = series resistance (Ohmic resistance) of circuit
-        R1 = resistance of parallel connected circuit element
-        C1 = capacitance of parallel connected circuit element
-        w = angular frequency
+    Input
+    =====
+    R0 = series resistance (Ohmic resistance) of circuit
+    R1 = resistance of parallel connected circuit element
+    C1 = capacitance of parallel connected circuit element
+    w = angular frequency
 
-        Output
-        ======
-        The frequency dependent impedance as a complex number.
-        """
-        z_r0 = r0
-        z_r1 = r1
-        z_c1 = -1j / (w * c1)  # capacitive reactance
-        z_r1c1 = 1 / (1 / z_r1 + 1 / z_c1)  # parallel connection
-        return z_r0 + z_r1c1  # Z_R0 and Z_R1,C1 connected in series
-        # ------------#
+    Output
+    ======
+    The frequency dependent impedance as a complex number.
+    """
+    z_r0 = r0
+    z_r1 = r1
+    z_c1 = -1j / (w * c1) # capacitive reactance
+    z_r1c1 = 1 / (1 / z_r1 + 1 / z_c1) # parallel connection
+    return z_r0 + z_r1c1 # Z_R0 and Z_R1,C1 connected in series
+    # ------------#
 
 
     # Function 6 (I-1) to Calculate, and update Nyquist and Bode plots while also,
     # updating when any parameter is changed
     # ------------
     @pn.depends(r0.param.value, r1.param.value, c1.param.value,
-                fstart.param.value, fstop.param.value, pts_per_decade.param.value,
-                plot1width.param.value, plot1height.param.value,
-                plot2width.param.value, plot2height.param.value,
-                plot_properties_radio.param.value, reset_button.param.value,
-                plot1_range_axis.param.value, plot2_range_xaxis.param.value,
-                plot2_range_yaxis.param.value)
+    fstart.param.value, fstop.param.value, pts_per_decade.param.value,
+    plot1width.param.value, plot1height.param.value,
+    plot2width.param.value, plot2height.param.value,
+    plot_properties_radio.param.value, reset_button.param.value,
+    plot1_range_axis.param.value, plot2_range_xaxis.param.value,
+    plot2_range_yaxis.param.value)
     def z(r0, r1, c1, fstart, fstop, pts_per_decade,
-          plot1width, plot1height, plot2width, plot2height,
-          setting, reset, plot1_range_axis,
-          plot2_range_xaxis, plot2_range_yaxis):
-        """
-        Returns the complex plane/nyquist plot and bode plot, reset the
-        plot properties mode, reset all sliders to their default state.
+    plot1width, plot1height, plot2width, plot2height,
+    setting, reset, plot1_range_axis,
+    plot2_range_xaxis, plot2_range_yaxis):
+    """
+    Returns the complex plane/nyquist plot and bode plot, reset the
+    plot properties mode, reset all sliders to their default state.
 
-        Input
-        =====
-        R0 = ohmic/solution/series resistance of circuit
-        R1 = resistance of parallel connected circuit element
-        C1 = capacitance of parallel connected circuit element
-        fstart = start frequency
-        fstop = stop frequency
-        pts_per_decade = resolution i.e., sampling points per decade
-        plot sizes
-        plot ranges
-        state of toggle to reset all sliders
-        plot properties mode between Default and Manual
+    Input
+    =====
+    R0 = ohmic/solution/series resistance of circuit
+    R1 = resistance of parallel connected circuit element
+    C1 = capacitance of parallel connected circuit element
+    fstart = start frequency
+    fstop = stop frequency
+    pts_per_decade = resolution i.e., sampling points per decade
+    plot sizes
+    plot ranges
+    state of toggle to reset all sliders
+    plot properties mode between Default and Manual
 
-        Output
-        ======
-        Nyquist and Bode plots with computed Impedance
-        """
+    Output
+    ======
+    Nyquist and Bode plots with computed Impedance
+    """
 
-        plot1_x_left = plot1_range_axis[0]
-        plot1_x_right = plot1_range_axis[1]
-        plot1_y_bottom = plot1_range_axis[0]
-        plot1_y_top = plot1_range_axis[1]
+    plot1_x_left = plot1_range_axis[0]
+    plot1_x_right = plot1_range_axis[1]
+    plot1_y_bottom = plot1_range_axis[0]
+    plot1_y_top = plot1_range_axis[1]
 
-        plot2_x_left = plot2_range_xaxis[0]
-        plot2_x_right = plot2_range_xaxis[1]
-        plot2_y_bottom = plot2_range_yaxis[0]
-        plot2_y_top = plot2_range_yaxis[1]
+    plot2_x_left = plot2_range_xaxis[0]
+    plot2_x_right = plot2_range_xaxis[1]
+    plot2_y_bottom = plot2_range_yaxis[0]
+    plot2_y_top = plot2_range_yaxis[1]
 
-        if reset is True:
-            reset_variable_values()
-            reset_plot_size_values()
+    if reset is True:
+    reset_variable_values()
+    reset_plot_size_values()
 
-        if setting == 'Default':
-            reset_plot_size_values()
+    if setting == 'Default':
+    reset_plot_size_values()
 
-        w = ang_freq_range(fstart, fstop, pts_per_decade)
+    w = ang_freq_range(fstart, fstop, pts_per_decade)
 
-        z = z_r0_r1c1(r0, r1, c1, (w / 2 * np.pi))
+    z = z_r0_r1c1(r0, r1, c1, (w / 2 * np.pi))
 
-        if setting == 'Default':
-            plot2_y_top = 20
+    if setting == 'Default':
+    plot2_y_top = 20
 
-        plot1_nyquist = ColumnDataSource(data=dict(x=z.real, y=-1 * z.imag))
-        plot2_bode = ColumnDataSource(data=dict(x=w / (2 * np.pi), y=-1 * z.imag))
+    plot1_nyquist = ColumnDataSource(data=dict(x=z.real, y=-1 * z.imag))
+    plot2_bode = ColumnDataSource(data=dict(x=w / (2 * np.pi), y=-1 * z.imag))
 
-        plot1 = figure(name='Plot 1', title="Nyquist Plot",
-                       tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
-                       x_axis_label="Z Real [Ohm]",
-                       y_axis_label="-Z Imaginary [Ohm]",
-                       plot_height=plot1height,
-                       x_range=(plot1_x_left, plot1_x_right),
-                       y_range=(plot1_y_bottom, plot1_y_top))
-        plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
-        plot2 = figure(name='Plot 2', title="Bode Plot",
-                       tools="pan,wheel_zoom, box_zoom, reset, save, box_select",
-                       x_axis_type="log", y_axis_type="linear",
-                       x_axis_label="frequency [Hz]",
-                       y_axis_label="-Z Imaginary [Ohm]",
-                       plot_height=plot2height,
-                       x_range=(plot2_x_left, plot2_x_right),
-                       y_range=(plot2_y_bottom, plot2_y_top))
-        plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
+    plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
+    tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
+    x_axis_label="Z Real [Ohm]",
+    y_axis_label="-Z Imaginary [Ohm]",
+    plot_height=plot1height,
+    x_range=(plot1_x_left, plot1_x_right),
+    y_range=(plot1_y_bottom, plot1_y_top))
+    plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
+    plot2 = figure(name='Plot 2', title="Bode Plot",
+    tools="pan,wheel_zoom, box_zoom, reset, save, box_select",
+    x_axis_type="log", y_axis_type="linear",
+    x_axis_label="frequency [Hz]",
+    y_axis_label="-Z Imaginary [Ohm]",
+    plot_height=plot2height,
+    x_range=(plot2_x_left, plot2_x_right),
+    y_range=(plot2_y_bottom, plot2_y_top))
+    plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
 
-        if setting == 'Default':
-            plot1 = figure(name='Plot 1', title="Nyquist Plot",
-                           tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
-                           x_axis_label="Z Real [Ohm]",
-                           y_axis_label="-Z Imaginary [Ohm]",
-                           plot_height=plot1height,
-                           x_range=(plot1_x_left, plot1_x_right),
-                           y_range=(plot1_y_bottom, plot1_y_top))
-            plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
-            plot2 = figure(name='Plot 2', title="Bode Plot",
-                           tools="pan,wheel_zoom,box_zoom,reset,save,box_select",
-                           x_axis_type="log", y_axis_type="linear",
-                           x_axis_label="frequency [Hz]",
-                           y_axis_label='-Z Imaginary [Ohm]',
-                           y_range=(plot2_y_bottom, plot2_y_top),
-                           plot_height=plot2height)
-            plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
+    if setting == 'Default':
+    plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
+    tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
+    x_axis_label="Z Real [Ohm]",
+    y_axis_label="-Z Imaginary [Ohm]",
+    plot_height=plot1height,
+    x_range=(plot1_x_left, plot1_x_right),
+    y_range=(plot1_y_bottom, plot1_y_top))
+    plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
+    plot2 = figure(name='Plot 2', title="Bode Plot",
+    tools="pan,wheel_zoom,box_zoom,reset,save,box_select",
+    x_axis_type="log", y_axis_type="linear",
+    x_axis_label="frequency [Hz]",
+    y_axis_label='-Z Imaginary [Ohm]',
+    y_range=(plot2_y_bottom, plot2_y_top),
+    plot_height=plot2height)
+    plot2.line('x', 'y', source=plot2_bode, line_width=2, color="blue")
 
-        return pn.Column(pn.Tabs(plot1, width=plot1width,
-                                 height=plot1height + 30, closable=True),
-                         pn.Tabs(plot2, width=plot2width,
-                                 height=plot2height, closable=True))
-        # ------------#
+    return pn.Column(pn.Tabs(plot1, width=plot1width,
+    height=plot1height + 30, closable=True),
+    pn.Tabs(plot2, width=plot2width,
+    height=plot2height, closable=True))
+    # ------------#
 
 
     # Function 7 (I-1) to Select between Default and Manual mode for plot size, and
@@ -522,117 +539,118 @@
     # ------------
     @pn.depends(plot_properties_radio.param.value, reset_button.param.value)
     def set_and_reset_plot_size_and_limits(setting, reset):
-        """
-        Returns Default message or shows Manual mode with plot size and range sliders.
-        Further, also take in the state of Radio and Toggle panes to set the modes,
-        and reset the size and range values.
+    """
+    Returns Default message or shows Manual mode with plot size and range sliders.
+    Further, also take in the state of Radio and Toggle panes to set the modes,
+    and reset the size and range values.
 
-        Input
-        =====
-        State of Reset panel-'Toggle' button
+    Input
+    =====
+    State of Reset panel-'Toggle' button
 
-        Output
-        =====
-        Display plot properties panel-Sliders grouped under 'Default' and 'Manual'
-        panel-Radio button
-        """
-        text = """
-        ### Default mode enabled!
-        <hr>
-        """
-        plot1_limits = pn.Column(plot1_range_axis)
-        plot2_xlimits = pn.Column(plot2_range_xaxis)
-        plot2_ylimits = pn.Column(plot2_range_yaxis)
+    Output
+    =====
+    Display plot properties panel-Sliders grouped under 'Default' and 'Manual'
+    panel-Radio button
+    """
+    text = """
+    ### Default mode enabled!
+    <hr>
+    """
+    plot1_limits = pn.Column(plot1_range_axis)
+    plot2_xlimits = pn.Column(plot2_range_xaxis)
+    plot2_ylimits = pn.Column(plot2_range_yaxis)
 
-        if reset is True:
-            reset_plot_size_values()
-            reset_plot_range_values()
+    if reset is True:
+    reset_plot_size_values()
+    reset_plot_range_values()
 
-        if setting == 'Default':
-            return pn.pane.Alert(text, alert_type="success", max_width=600)
-        return pn.Column('### Plot size',
-                         pn.Accordion(('Nyquist plot width', plot1width),
-                                      ('Nyquist plot height', plot1height),
-                                      ('Bode plot width', plot2width),
-                                      ('Bode plot height', plot2height),
-                                      max_width=600, header_color='#FFFFFF',
-                                      header_background='#008835',
-                                      active_header_background='#008835'),
-                         '### Plot range', pn.Accordion(
-                ('Nyquist plot limits', plot1_limits),
-                ('Bode plot x-axis limits', plot2_xlimits),
-                ('Bode plot y-axis limits', plot2_ylimits), max_width=600,
-                header_color='#FFFFFF', header_background='#008835',
-                active_header_background='#008835'))
+    if setting == 'Default':
+    return pn.pane.Alert(text, alert_type="success", max_width=600)
+    return pn.Column('### Plot size',
+    pn.Accordion(('Nyquist plot width', plot1width),
+    ('Nyquist plot height', plot1height),
+    ('Bode plot width', plot2width),
+    ('Bode plot height', plot2height),
+    max_width=600, header_color='#FFFFFF',
+    header_background='#008835',
+    active_header_background='#008835'),
+    '### Plot range', pn.Accordion(
+    ('Nyquist plot limits', plot1_limits),
+    ('Bode plot x-axis limits', plot2_xlimits),
+    ('Bode plot y-axis limits', plot2_ylimits), max_width=600,
+    header_color='#FFFFFF', header_background='#008835',
+    active_header_background='#008835'))
 
 
     # Function 8 (I-1) to Display and Update all butler-volmer current slider variables
     # ------------
     @pn.depends(reset_button.param.value)
     def changing_variables(reset):
-        """
-        Returns a Markdown/Heading of the section with a current density display,
-        and Accordion(s) with variable sliders grouped under. Additionally,
-        the slider variable values will also be reset to Default if reset button
-        is pressed twice.
+    """
+    Returns a Markdown/Heading of the section with a current density display,
+    and Accordion(s) with variable sliders grouped under. Additionally,
+    the slider variable values will also be reset to Default if reset button
+    is pressed twice.
 
-        Input
-        =====
-        State of Reset panel-'Toggle' button
+    Input
+    =====
+    State of Reset panel-'Toggle' button
 
-        Output
-        =====
-        Reset the all sliders and output the grouped panel-sliders
-        under respective heading and accordion(s)
-        """
-        if reset is True:
-            reset_variable_values()
+    Output
+    =====
+    Reset the all sliders and output the grouped panel-sliders
+    under respective heading and accordion(s)
+    """
+    if reset is True:
+    reset_variable_values()
 
-        tab1 = pn.Column(r0_Markdown, r0, r1_Markdown, r1, c1_Markdown, c1)
-        tab2 = pn.Column(fstart_Markdown, fstart, fstop_Markdown, fstop,
-                         pts_per_decade_Markdown, pts_per_decade)
-        return pn.Column(Slider_Markdown_heading,
-                         pn.Accordion(
-                             ('System / Observation parameters', tab1),
-                             ('Measurement parameters', tab2),
-                             header_color='#FFFFFF',
-                             header_background='#008835',
-                             active_header_background='#008835'))
+    tab1 = pn.Column(r0_Markdown, r0, r1_Markdown, r1, c1_Markdown, c1)
+    tab2 = pn.Column(fstart_Markdown, fstart, fstop_Markdown, fstop,
+    pts_per_decade_Markdown, pts_per_decade)
+    return pn.Column(Slider_Markdown_heading,
+    pn.Accordion(
+    ('System / Observation parameters', tab1),
+    ('Measurement parameters', tab2),
+    header_color='#FFFFFF',
+    header_background='#008835',
+    active_header_background='#008835'))
 
 
     # ------------
     Info = z
     plot_properties = pn.Column(plot_properties_Markdown, plot_properties_radio,
-                                set_and_reset_plot_size_and_limits)
+    set_and_reset_plot_size_and_limits)
 
     pn.template.GoldenTemplate(accent_base_color='#008835',
-                               header_background='#008835',
-                               site="Interactive Electrochemistry",
-                               title=" Equivalent Circuit 'R0-(R1,C1)'",
-                               sidebar=[Info_Markdown, changing_variables,
-                                        reset_button, plot_properties],
-                               main=[Info]).servable(target='simple_app')
+    header_background='#008835',
+    site="Interactive Electrochemistry",
+    title=" Equivalent Circuit 'R0-(R1,C1)'",
+    sidebar=[Info_Markdown, changing_variables,
+    reset_button, plot_properties],
+    main=[Info]).servable(target='simple_app')
 
 
-    await write_doc();</py-script>
-    <script type="application/json" id="1580">
+    await write_doc();
+  </py-script>
+  <script type="application/json" id="1580">
       {"62b57f07-3ffc-4491-a61b-d11ecb1e458f":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"end":60},"id":"1100","type":"Range1d"},{"attributes":{"tools":[{"id":"1156"},{"id":"1157"},{"id":"1158"},{"id":"1159"},{"id":"1160"},{"id":"1161"}]},"id":"1164","type":"Toolbar"},{"attributes":{"axis":{"id":"1112"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1115","type":"Grid"},{"attributes":{"source":{"id":"1016"}},"id":"1176","type":"CDSView"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1512"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.0005,"value":0.09685,"value_throttled":0,"width":75},"id":"1318","type":"Spinner"},{"attributes":{},"id":"1157","type":"WheelZoomTool"},{"attributes":{"line_alpha":0.1,"line_color":"blue","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1133","type":"Line"},{"attributes":{"coordinates":null,"data_source":{"id":"1015"},"glyph":{"id":"1132"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1134"},"nonselection_glyph":{"id":"1133"},"view":{"id":"1136"}},"id":"1135","type":"GlyphRenderer"},{"attributes":{"overlay":{"id":"1162"}},"id":"1161","type":"BoxSelectTool"},{"attributes":{"children":[{"id":"1372"},{"id":"1373"},{"id":"1374"}],"margin":[0,0,0,0],"name":"140267059955888","sizing_mode":"stretch_width","tags":["nav"]},"id":"1371","type":"Column"},{"attributes":{"tools":[{"id":"1116"},{"id":"1117"},{"id":"1118"},{"id":"1119"},{"id":"1120"},{"id":"1121"}]},"id":"1124","type":"Toolbar"},{"attributes":{"below":[{"id":"1108"}],"center":[{"id":"1111"},{"id":"1115"}],"height":400,"left":[{"id":"1112"}],"name":"Plot 1","renderers":[{"id":"1135"}],"sizing_mode":"stretch_width","title":{"id":"1098"},"toolbar":{"id":"1124"},"x_range":{"id":"1100"},"x_scale":{"id":"1104"},"y_range":{"id":"1102"},"y_scale":{"id":"1106"}},"id":"1097","subtype":"Figure","type":"Plot"},{"attributes":{"data":{"x":{"__ndarray__":"DJa88///PUB/Ue3t//89QLR4XeX//z1ADEK/2P//PUD3wibG//89QJEGv6r//z1AGadbgv//PUB9GtZG//89QAnrHe/+/z1A2FjXbf7/PUB7lFKv/f89QPNFjJb8/z1AMIPC+Pr/PUBy//GW+P89QMOtPRT1/z1AKObK5+//PUBZFetH6P89QK89Zwvd/z1ATZVBfMz/PUAqVQwVtP89QJZBtR6Q/z1ArhzfH1v/PUBhlt8HDf89QBtGMvWZ/j1AXkQtaPD9PUCGXeic9vw9QOiRp6eG+z1ACHTCwWj5PUDAJuz0SvY9QCVaLvq08T1AS7vzq/bqPUCsAlDXDuE9QEm1upeH0j1AdGWK7kS9PUDsF2h7Qp49QMBPXEU/cT1A0vVtp1wwPUD8pSx4w9M8QLLtCS99UTxAumZ77tedO0Du0dM+16w6QH4uFp8wdTlAyuzyfsn0N0CU8P2AXDU2QO7Eaf5qTjRAyurzTbphMkC+9s1FqJIwQEHZ+F1B+S1AMeCUhHZbK0BnHETOU04pQHkQ0xq9widAKvv7zp6hJkDOi/3Y9NIlQL07Hp2QQSVAzEH25GvcJEB6Kzmtm5YkQCAjmA6uZiRAk7l39uVFJECYjWqRiC8kQNEjB0RNICRAbsapxPAVJEBWXwDc5Q4kQPqzehYdCiRAjbsoX90GJEAT6a+2qAQkQIt2xW0pAyRAa6PrSSUCJEDyFRS+dAEkQAdwLe/8ACRAu+n6oasAJEAWWIt2dAAkQN4B0AZPACRAObKonzUAJEDs4eZiJAAkQNHQnLAYACRAP//VwBAAJEDFFS1eCwAkQFaFsLYHACRAO/rqOwUAJEBLHjKNAwAkQIZR7mgCACRAYaWdogEAJEDhxgwcAQAkQDSlvcAAACRAaY3IggAAJEACFL5YAAAkQNg/NzwAACRAn/LbKAAAJEDYjLkbAAAkQK8C0BIAACRAz+HDDAAAJEATaKkIAAAkQHSc4AUAACRAc/L8AwAAJEBNwrQCAAAkQIcR1gEAACRA","dtype":"float64","order":"little","shape":[96]},"y":{"__ndarray__":"RMnCqm1Sbz/YjaswGANzP0mMY6KKFHc/9yv9mdUEfD+U7ToT1AGBP2YzE61ypYQ/1CIamGkQiT9vFCaDYG2OP3r7pc8PeJI/6ClHxcFrlj8VwzQV7jebP6MSTlRzhaA/KJAAOnMOpD+YbdYOGFmoP+DBk0rQjq0/Mq70kfPwsT/gSaiytMe1P3WRlMC4cLo/4k4qJnwMwD/HRb+fg3vDP4Mov/GPpsc/NPuopM21zD8uCXIe+2zRP2Hd37UNJ9U/Ftp+oeas2T9SHSSZ1CnfP5049oQX6eI/aGUOEYvy5j9wOjIQN9frPxroe49B4vA/4bLNrTB49D+kOn7zHM34P+I6V6qsBf4/TyERV5IlAkBNfOahAuUFQMNtlq9eVwpAdsHH3pOPD0CP7OtHxMsSQCscyLJ8MxZAu+rs40/rGUA/aHBzqMgdQIjbkfMzwiBAQyXQAUheIkCkEt0elYEjQMw/FOuY/SNAwg40/4O8I0D2hCZ778kiQBk4WzEmTiFA0kmTB4r+HkBVXySItyIbQDW8yTcmWRdAZUKzrQzVE0CvhniUgrAQQJWFp16U5wtABZnQIHM4B0DD+UG2ykIDQILMfQP14f8/FHLDwQ9Z+j9EBLX/YsD1P0QLXBbA8fE/c9RtLMiX7T+j73EUxGToP5xVsVh2GuQ/RGo2wq+Q4D9/kCLz8EvbP3rOIWUUfdY/y2dR1MyG0j/qAROyLobOPxmgN4QjJck/EXiPT6+2xD9aJolgHhDBP/kQssd6HLw/Ss11hRMotz/ldH7NNxOzP4UrKfgGba8/3ogVOAXjqT/3bHbF8VKlP+H+nQXAkKE/ngQTHE3wnD++qewkgtaXP5wjYeLfopM/fN3MFdUskD/RvZPd7aWKPwYvKOV884U/omM6d/0Ugj8z2ts4KMp9Pxs9sQj2iXg/qTbR07E2dD+YzKKqmKZwPx7k+AOIbms/sZwlHbuYZj8ZB7dWG51iPx0lmeVnql4/MV/f5K5CWT/siM10285UP+1vLULwI1E/","dtype":"float64","order":"little","shape":[96]}},"selected":{"id":"1194"},"selection_policy":{"id":"1193"}},"id":"1015","type":"ColumnDataSource"},{"attributes":{},"id":"1192","type":"AllLabels"},{"attributes":{"children":[{"id":"1300"},{"id":"1303"}],"margin":[5,10,5,10],"min_width":300,"name":"Column00115","width":300},"id":"1299","type":"Column"},{"attributes":{},"id":"1153","type":"BasicTicker"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1123","type":"BoxAnnotation"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00210","sizing_mode":"stretch_width","text":"&amp;lt;p&amp;gt;Stop frequency: $$f_{stop}$$&amp;lt;/p&amp;gt;"},"id":"1314","type":"panel.models.markup.HTML"},{"attributes":{"axis":{"id":"1152"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1155","type":"Grid"},{"attributes":{},"id":"1191","type":"BasicTickFormatter"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00208","sizing_mode":"stretch_width","text":"&amp;lt;p&amp;gt;Start frequency: $$f_{start}$$&amp;lt;/p&amp;gt;"},"id":"1308","type":"panel.models.markup.HTML"},{"attributes":{},"id":"1193","type":"UnionRenderers"},{"attributes":{"align":"end","margin":[0,0,0,0],"name":"","sizing_mode":"stretch_width"},"id":"1317","type":"Div"},{"attributes":{"format":"%.0f"},"id":"1007","type":"PrintfTickFormatter"},{"attributes":{"end":20},"id":"1142","type":"Range1d"},{"attributes":{"children":[{"id":"1282"},{"id":"1304"}],"margin":[0,0,0,0],"name":"Accordion00253","sizing_mode":"stretch_width"},"id":"1281","type":"Column"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00218","sizing_mode":"stretch_width","text":"&amp;lt;h4&amp;gt;Use the below radio button group to choose between &amp;amp;lsquo;Default&amp;amp;rsquo; and &amp;amp;lsquo;Manual&amp;amp;rsquo; setting for plot properties - size and range&amp;lt;/h4&amp;gt;"},"id":"1372","type":"panel.models.markup.HTML"},{"attributes":{"css_classes":["alert","alert-success","markdown"],"margin":[0,0,25,0],"max_width":600,"name":"Alert00228","sizing_mode":"stretch_width","text":"&amp;lt;h3&amp;gt;Default mode enabled!&amp;lt;/h3&amp;gt;\n&amp;lt;hr&amp;gt;"},"id":"1375","type":"panel.models.markup.HTML"},{"attributes":{"overlay":{"id":"1123"}},"id":"1118","type":"BoxZoomTool"},{"attributes":{"children":[{"id":"1317"},{"id":"1318"}],"margin":[0,0,0,0],"name":"Row00134","sizing_mode":"stretch_width"},"id":"1316","type":"Row"},{"attributes":{"axis_label":"frequency [Hz]","coordinates":null,"formatter":{"id":"1204"},"group":null,"major_label_policy":{"id":"1205"},"ticker":{"id":"1149"}},"id":"1148","type":"LogAxis"},{"attributes":{"child":{"id":"1137"},"closable":true,"name":"Plot 2","title":"Plot 2"},"id":"1210","type":"Panel"},{"attributes":{},"id":"1156","type":"PanTool"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML00287","sizing_mode":"stretch_width","text":"Measurement parameters"},"id":"1306","type":"panel.models.markup.HTML"},{"attributes":{},"id":"1189","type":"AllLabels"},{"attributes":{"bar_color":"#3339ff","end":10000000,"format":{"id":"1005"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":500.0,"step":500,"value":9685000},"id":"1313","type":"Slider"},{"attributes":{"below":[{"id":"1148"}],"center":[{"id":"1151"},{"id":"1155"}],"height":400,"left":[{"id":"1152"}],"name":"Plot 2","renderers":[{"id":"1175"}],"sizing_mode":"stretch_width","title":{"id":"1138"},"toolbar":{"id":"1164"},"x_range":{"id":"1140"},"x_scale":{"id":"1144"},"y_range":{"id":"1142"},"y_scale":{"id":"1146"}},"id":"1137","subtype":"Figure","type":"Plot"},{"attributes":{"active_header_background":"#008835","button_css_classes":["card-button"],"children":[{"id":"1283"},{"id":"1285"}],"css_classes":["accordion"],"header_background":"#008835","header_color":"#FFFFFF","header_css_classes":["accordion-header"],"margin":[5,5,0,5],"name":"Card00282","sizing_mode":"stretch_width"},"id":"1282","type":"panel.models.layout.Card"},{"attributes":{"children":[{"id":"1316"},{"id":"1319"}],"margin":[5,10,5,10],"min_width":300,"name":"Column00129","width":300},"id":"1315","type":"Column"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1489"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":500,"value":9685000,"value_throttled":0,"width":75},"id":"1312","type":"Spinner"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00214","sizing_mode":"stretch_width","text":"&amp;lt;h3&amp;gt;Editable Sliders for Variables&amp;lt;/h3&amp;gt;"},"id":"1280","type":"panel.models.markup.HTML"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00206","sizing_mode":"stretch_width","text":"&amp;lt;p&amp;gt;Double layer capacitance: $$C_1$$&amp;lt;/p&amp;gt;"},"id":"1298","type":"panel.models.markup.HTML"},{"attributes":{"axis_label":"Z Real [Ohm]","coordinates":null,"formatter":{"id":"1191"},"group":null,"major_label_policy":{"id":"1192"},"ticker":{"id":"1109"}},"id":"1108","type":"LinearAxis"},{"attributes":{},"id":"1188","type":"BasicTickFormatter"},{"attributes":{"line_color":"blue","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1172","type":"Line"},{"attributes":{"children":[{"id":"1323"},{"id":"1324"}],"margin":[0,0,0,0],"name":"Row00141","sizing_mode":"stretch_width"},"id":"1322","type":"Row"},{"attributes":{"children":[{"id":"1322"},{"id":"1325"}],"margin":[5,10,5,10],"min_width":300,"name":"Column00136","width":300},"id":"1321","type":"Column"},{"attributes":{"align":"end","margin":[0,0,0,0],"name":"","sizing_mode":"stretch_width"},"id":"1311","type":"Div"},{"attributes":{"bar_color":"#000000","end":15,"format":{"id":"1007"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":1,"value":12},"id":"1325","type":"Slider"},{"attributes":{},"id":"1116","type":"PanTool"},{"attributes":{},"id":"1120","type":"SaveTool"},{"attributes":{"args":{"slider":{"id":"1297"},"source":{"id":"1296"}},"code":"try { \n        if (cb_obj.value &lt; slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value &gt; slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[[140267060005376,[null,"value"],[null,null]]]},"id":"1443","type":"CustomJS"},{"attributes":{},"id":"1144","type":"LogScale"},{"attributes":{"children":[{"id":"1286"},{"id":"1287"},{"id":"1292"},{"id":"1293"},{"id":"1298"},{"id":"1299"}],"margin":[0,0,0,0],"name":"Column00251","sizing_mode":"stretch_width"},"id":"1285","type":"Column"},{"attributes":{"button_type":"danger","icon":null,"label":"Press me twice to Reset","margin":[5,10,5,10],"name":"140267059853728","sizing_mode":"stretch_width","tags":["nav"]},"id":"1348","type":"Toggle"},{"attributes":{"axis_label":"-Z Imaginary [Ohm]","coordinates":null,"formatter":{"id":"1188"},"group":null,"major_label_policy":{"id":"1189"},"ticker":{"id":"1113"}},"id":"1112","type":"LinearAxis"},{"attributes":{"children":[{"id":"1280"},{"id":"1281"}],"margin":[0,0,0,0],"name":"Column00254","sizing_mode":"stretch_width"},"id":"1279","type":"Column"},{"attributes":{},"id":"1117","type":"WheelZoomTool"},{"attributes":{"children":[{"id":"1310"},{"id":"1313"}],"margin":[5,10,5,10],"min_width":300,"name":"Column00122","width":300},"id":"1309","type":"Column"},{"attributes":{"active":0,"button_type":"success","labels":["Default","Manual"],"margin":[5,10,5,10],"max_width":600,"sizing_mode":"stretch_width"},"id":"1373","type":"RadioButtonGroup"},{"attributes":{"children":[{"id":"1284"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row00281","sizing_mode":"stretch_width"},"id":"1283","type":"Row"},{"attributes":{"axis_label":"-Z Imaginary [Ohm]","coordinates":null,"formatter":{"id":"1201"},"group":null,"major_label_policy":{"id":"1202"},"ticker":{"id":"1153"}},"id":"1152","type":"LinearAxis"},{"attributes":{"children":[{"id":"1184"}],"margin":[10,15,10,10],"name":"140267059953872","sizing_mode":"stretch_width","tags":["main"]},"id":"1183","type":"Row"},{"attributes":{"children":[{"id":"1288"},{"id":"1291"}],"margin":[5,10,5,10],"min_width":300,"name":"Column00101","width":300},"id":"1287","type":"Column"},{"attributes":{"css_classes":["loader","light"],"height":20,"margin":[5,10,5,10],"name":"busy_indicator","sizing_mode":"fixed","width":20},"id":"1182","type":"panel.models.markup.HTML"},{"attributes":{"coordinates":null,"data_source":{"id":"1016"},"glyph":{"id":"1172"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1174"},"nonselection_glyph":{"id":"1173"},"view":{"id":"1176"}},"id":"1175","type":"GlyphRenderer"},{"attributes":{"children":[{"id":"1301"},{"id":"1302"}],"margin":[0,0,0,0],"name":"Row00120","sizing_mode":"stretch_width"},"id":"1300","type":"Row"},{"attributes":{"height":0,"margin":[0,0,0,0],"name":"js_area","sizing_mode":"fixed","width":0},"id":"1179","type":"panel.models.markup.HTML"},{"attributes":{"line_alpha":0.2,"line_color":"blue","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1174","type":"Line"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML00283","sizing_mode":"stretch_width","text":"System / Observation parameters"},"id":"1284","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1294"},{"id":"1297"}],"margin":[5,10,5,10],"min_width":300,"name":"Column00108","width":300},"id":"1293","type":"Column"},{"attributes":{"children":[{"id":"1289"},{"id":"1290"}],"margin":[0,0,0,0],"name":"Row00106","sizing_mode":"stretch_width"},"id":"1288","type":"Row"},{"attributes":{"line_alpha":0.1,"line_color":"blue","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1173","type":"Line"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00202","sizing_mode":"stretch_width","text":"&amp;lt;p&amp;gt;Ohmic (or) Solution resistance: $$R_0$$&amp;lt;/p&amp;gt;"},"id":"1286","type":"panel.models.markup.HTML"},{"attributes":{"align":"end","margin":[0,0,0,0],"name":"","sizing_mode":"stretch_width"},"id":"1289","type":"Div"},{"attributes":{"align":"end","margin":[0,0,0,0],"name":"","sizing_mode":"stretch_width"},"id":"1323","type":"Div"},{"attributes":{"children":[{"id":"1279"}],"margin":[0,0,0,0],"name":"140267060306512","sizing_mode":"stretch_width","tags":["nav"]},"id":"1278","type":"Row"},{"attributes":{"format":"%.1f Ohm"},"id":"1003","type":"PrintfTickFormatter"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00212","sizing_mode":"stretch_width","text":"&amp;lt;p&amp;gt;Points per decade:&amp;lt;/p&amp;gt;"},"id":"1320","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1295"},{"id":"1296"}],"margin":[0,0,0,0],"name":"Row00113","sizing_mode":"stretch_width"},"id":"1294","type":"Row"},{"attributes":{"format":"%.1f Ohm"},"id":"1002","type":"PrintfTickFormatter"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1163","type":"BoxAnnotation"},{"attributes":{"bar_color":"#3339ff","end":500.0,"format":{"id":"1006"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":0.1,"step":0.0005,"value":0.09685},"id":"1319","type":"Slider"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1420"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.5,"value":10,"value_throttled":0,"width":75},"id":"1290","type":"Spinner"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1162","type":"BoxAnnotation"},{"attributes":{"align":"end","margin":[0,0,0,0],"name":"","sizing_mode":"stretch_width"},"id":"1295","type":"Div"},{"attributes":{},"id":"1104","type":"LinearScale"},{"attributes":{},"id":"1140","type":"DataRange1d"},{"attributes":{},"id":"1201","type":"BasicTickFormatter"},{"attributes":{"coordinates":null,"group":null,"text":"Nyquist Plot"},"id":"1098","type":"Title"},{"attributes":{"overlay":{"id":"1122"}},"id":"1121","type":"BoxSelectTool"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"140267059956848","sizing_mode":"stretch_width","tags":["nav"],"text":"&amp;lt;h2&amp;gt;Equivalent Circuit &amp;amp;lsquo;R0-p(R1,C1)&amp;amp;rsquo;&amp;lt;/h2&amp;gt;\n&amp;lt;p&amp;gt;Elements in series are separated by a dash &amp;amp;lsquo;&amp;lt;strong&amp;gt;-&amp;lt;/strong&amp;gt;&amp;amp;rsquo;, and those in parallel are written in &amp;amp;lsquo;&amp;lt;strong&amp;gt;p( , )&amp;lt;/strong&amp;gt;&amp;amp;rsquo;, where elements are separated by a comma &amp;amp;lsquo;&amp;lt;strong&amp;gt;,&amp;lt;/strong&amp;gt;&amp;amp;rsquo;.&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;Here, an interactive visualization for the equivalent circuit &amp;amp;lsquo;&amp;lt;strong&amp;gt;R0-p(R1,C1)&amp;lt;/strong&amp;gt;&amp;amp;lsquo; is presented.&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;All the elements are grouped under &amp;amp;lsquo;&amp;lt;em&amp;gt;System / Observation Parameters&amp;lt;/em&amp;gt;&amp;amp;lsquo; dropdown and can be varied. Start, stop frequencies, and resolution of measurement can be adjusted using sliders present under a second &amp;amp;lsquo;&amp;lt;em&amp;gt;Measurement Parameters&amp;lt;/em&amp;gt;&amp;amp;lsquo; dropdown.&amp;lt;/p&amp;gt;\n&amp;lt;hr&amp;gt;\n&amp;lt;p&amp;gt;$$ Z_{R_{0}} = R_{0}$$&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;$$Z_{C_{1}} = -\\frac{j}{\\omega * C_{1}}$$ (or) $$ \\frac{1}{j* \\omega * C_{1}}$$&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;$$Z_{R_{1}C_{1}} = \\biggl(\\frac{1}{ \\frac{1}{Z_{R_{1}}} + \\frac{1}{Z_{C_{1}}}} \\biggl)$$&amp;lt;/p&amp;gt;\n&amp;lt;hr&amp;gt;\n&amp;lt;h2&amp;gt;$$Z = Z_{R_{0}} + Z_{R_{1}C_{1}}$$&amp;lt;/h2&amp;gt;\n&amp;lt;p&amp;gt;in words, &amp;lt;strong&amp;gt;R0 in series with parallel of (R1, C1)&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;\n&amp;lt;hr&amp;gt;"},"id":"1255","type":"panel.models.markup.HTML"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00204","sizing_mode":"stretch_width","text":"&amp;lt;p&amp;gt;Reaction resistance: $$R_1$$&amp;lt;/p&amp;gt;"},"id":"1292","type":"panel.models.markup.HTML"},{"attributes":{"format":"%.6f F"},"id":"1004","type":"PrintfTickFormatter"},{"attributes":{"children":[{"id":"1311"},{"id":"1312"}],"margin":[0,0,0,0],"name":"Row00127","sizing_mode":"stretch_width"},"id":"1310","type":"Row"},{"attributes":{"data":{"id":"1180"},"margin":[0,0,0,0],"name":"actions","scripts":{"close_modal":["document.getElementById(&amp;#x27;pn-Modal&amp;#x27;).style.display = &amp;#x27;none&amp;#x27;"],"open_modal":["document.getElementById(&amp;#x27;pn-Modal&amp;#x27;).style.display = &amp;#x27;block&amp;#x27;"]},"subscribed_events":["dom_event"]},"id":"1181","type":"panel.models.reactive_html.ReactiveHTML"},{"attributes":{},"id":"1202","type":"AllLabels"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1535"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","value":12,"value_throttled":0,"width":75},"id":"1324","type":"Spinner"},{"attributes":{"end":60},"id":"1102","type":"Range1d"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1122","type":"BoxAnnotation"},{"attributes":{"source":{"id":"1015"}},"id":"1136","type":"CDSView"},{"attributes":{"active_header_background":"#008835","button_css_classes":["card-button"],"children":[{"id":"1305"},{"id":"1307"}],"css_classes":["accordion"],"header_background":"#008835","header_color":"#FFFFFF","header_css_classes":["accordion-header"],"margin":[0,5,5,5],"name":"Card00286","sizing_mode":"stretch_width"},"id":"1304","type":"panel.models.layout.Card"},{"attributes":{"bar_color":"#ff0000","end":20,"format":{"id":"1002"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":1,"step":0.5,"value":10},"id":"1291","type":"Slider"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1443"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.5,"value":20,"value_throttled":0,"width":75},"id":"1296","type":"Spinner"},{"attributes":{"ticker":null},"id":"1204","type":"LogTickFormatter"},{"attributes":{"args":{"slider":{"id":"1325"},"source":{"id":"1324"}},"code":"try { \n        if (cb_obj.value &lt; slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value &gt; slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[[140267060258080,[null,"value"],[null,null]]]},"id":"1535","type":"CustomJS"},{"attributes":{"children":[{"id":"1308"},{"id":"1309"},{"id":"1314"},{"id":"1315"},{"id":"1320"},{"id":"1321"}],"margin":[0,0,0,0],"name":"Column00252","sizing_mode":"stretch_width"},"id":"1307","type":"Column"},{"attributes":{},"id":"1106","type":"LinearScale"},{"attributes":{"children":[{"id":"1375"}],"margin":[0,0,0,0],"name":"Row00224","sizing_mode":"stretch_width"},"id":"1374","type":"Row"},{"attributes":{"axis":{"id":"1108"},"coordinates":null,"group":null,"ticker":null},"id":"1111","type":"Grid"},{"attributes":{},"id":"1205","type":"AllLabels"},{"attributes":{"line_alpha":0.2,"line_color":"blue","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1134","type":"Line"},{"attributes":{"args":{"slider":{"id":"1319"},"source":{"id":"1318"}},"code":"try { \n        if (cb_obj.value &lt; slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value &gt; slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[[140267060268192,[null,"value"],[null,null]]]},"id":"1512","type":"CustomJS"},{"attributes":{"name":"location","reload":false},"id":"1177","type":"panel.models.location.Location"},{"attributes":{},"id":"1109","type":"BasicTicker"},{"attributes":{"coordinates":null,"group":null,"text":"Bode Plot"},"id":"1138","type":"Title"},{"attributes":{"bar_color":"#ff0000","end":40,"format":{"id":"1003"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":1,"step":0.5,"value":20},"id":"1297","type":"Slider"},{"attributes":{},"id":"1113","type":"BasicTicker"},{"attributes":{"args":{"slider":{"id":"1313"},"source":{"id":"1312"}},"code":"try { \n        if (cb_obj.value &lt; slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value &gt; slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[[140267060267808,[null,"value"],[null,null]]]},"id":"1489","type":"CustomJS"},{"attributes":{"line_color":"blue","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1132","type":"Line"},{"attributes":{},"id":"1119","type":"ResetTool"},{"attributes":{"num_minor_ticks":10},"id":"1149","type":"LogTicker"},{"attributes":{"align":"end","margin":[0,0,0,0],"name":"","sizing_mode":"stretch_width"},"id":"1301","type":"Div"},{"attributes":{"child":{"id":"1097"},"closable":true,"name":"Plot 1","title":"Plot 1"},"id":"1197","type":"Panel"},{"attributes":{},"id":"1194","type":"Selection"},{"attributes":{"axis":{"id":"1148"},"coordinates":null,"group":null,"ticker":null},"id":"1151","type":"Grid"},{"attributes":{},"id":"1206","type":"UnionRenderers"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1466"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":1e-06,"value":1e-05,"value_throttled":0,"width":75},"id":"1302","type":"Spinner"},{"attributes":{"height":430,"margin":[0,0,0,0],"sizing_mode":"fixed","tabs":[{"id":"1197"}],"width":525},"id":"1185","type":"panel.models.tabs.Tabs"},{"attributes":{},"id":"1146","type":"LinearScale"},{"attributes":{"format":"%.0f Hz"},"id":"1005","type":"PrintfTickFormatter"},{"attributes":{"height":400,"margin":[0,0,0,0],"sizing_mode":"fixed","tabs":[{"id":"1210"}],"width":525},"id":"1198","type":"panel.models.tabs.Tabs"},{"attributes":{"children":[{"id":"1306"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row00285","sizing_mode":"stretch_width"},"id":"1305","type":"Row"},{"attributes":{"args":{"slider":{"id":"1303"},"source":{"id":"1302"}},"code":"try { \n        if (cb_obj.value &lt; slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value &gt; slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[[140267059978496,[null,"value"],[null,null]]]},"id":"1466","type":"CustomJS"},{"attributes":{},"id":"1207","type":"Selection"},{"attributes":{"bar_color":"#ff00ff","end":0.0001,"format":{"id":"1004"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":1e-06,"step":1e-06,"value":1e-05},"id":"1303","type":"Slider"},{"attributes":{"children":[{"id":"1185"},{"id":"1198"}],"margin":[0,0,0,0],"name":"Column00243","sizing_mode":"stretch_width"},"id":"1184","type":"Column"},{"attributes":{"data":{"x":{"__ndarray__":"CRueXinLuD9JvbA0Txm+P7p1ovAIRcI/DisjT9Atxj/tRMd/vOzKP/hJI/XPV9A/jFkugA3X0z9xL46q2hXYP/rlj9A0Pd0/U7C+Um+/4T/1U5lToIvlP5+I+S/YJ+o/Hb3/OprA7z9gllwP+EXzP12U8M25Zfc/NyUL92Nn/D+kCwWupj0BQPBvBl4S7gRAu21PrpNoCUDyS75vaNgOQH/tq5EHuRJAA9xT6aC6FkDqgxaurpcbQBfLLBqTvyBAfQRrjQRVJEAUmvbZxa4oQJ1qwprY9i1ASBi8uB0wMkD9LToyaxQ2QCiF3EvozTpAXf4AexlFQECGXob4VcBDQCOC3r5G+kdA3vxoO7obTUBYQ8sTHatRQAYGMOv0clVAJIkjbeUJWkCLTxj1PpxfQHnkwqbmL2NAkRIhje9KZ0BQrr0z3kZsQDZuYQnpKXFAnswcXBvWdEAaa/nre0t5QB0H3QYXtX5ArChWiZejgkD0LKqQmqCGQI5EWb4WeItAGBYq0WWskEC8osvKvD2UQNxYo9aCkphAS3G7donUnUBZQZN0ShuiQAgsHCkj+6VAdQiKZDevqkAv2fpteDKwQJfFqnO4qbNAn/DPZtLet0Cvh5n7Zfq8QMz2bRnilsFAaLHvwWVaxUAqKMT0FOzJQGyTC1ANeM9A+vq/gu4Z00D6wAn5QzDXQLnuda19JtxA82It/0EW4UDICs3KP77kQMUDWHmFLulAhmJsDu6R7kDKgtAMQI7yQNdTaASyhvZA2uFR+6JY+0Bfpkx9TpkAQRaKHbCPJgRBWGVsL2B2CEHlG22bYbINQaUUuwiPBhJBMft9EvjhFUGY4WShqZAaQexiiLXsHyBB+DbT0zSTI0GYszp+fcMnQXQ4PeU32SxBx3sCSb6CMUExo4C38kE1QREImJ9mzjlBuGcvHAVUP0FbTGWGDwRDQb48i+62FUdB3o+QOUIGTEGcbYd1sQJRQT36q4p/plRBWvhGMLARWUFOyx5Y7W5eQQEAAAABeWJB","dtype":"float64","order":"little","shape":[96]},"y":{"__ndarray__":"RMnCqm1Sbz/YjaswGANzP0mMY6KKFHc/9yv9mdUEfD+U7ToT1AGBP2YzE61ypYQ/1CIamGkQiT9vFCaDYG2OP3r7pc8PeJI/6ClHxcFrlj8VwzQV7jebP6MSTlRzhaA/KJAAOnMOpD+YbdYOGFmoP+DBk0rQjq0/Mq70kfPwsT/gSaiytMe1P3WRlMC4cLo/4k4qJnwMwD/HRb+fg3vDP4Mov/GPpsc/NPuopM21zD8uCXIe+2zRP2Hd37UNJ9U/Ftp+oeas2T9SHSSZ1CnfP5049oQX6eI/aGUOEYvy5j9wOjIQN9frPxroe49B4vA/4bLNrTB49D+kOn7zHM34P+I6V6qsBf4/TyERV5IlAkBNfOahAuUFQMNtlq9eVwpAdsHH3pOPD0CP7OtHxMsSQCscyLJ8MxZAu+rs40/rGUA/aHBzqMgdQIjbkfMzwiBAQyXQAUheIkCkEt0elYEjQMw/FOuY/SNAwg40/4O8I0D2hCZ778kiQBk4WzEmTiFA0kmTB4r+HkBVXySItyIbQDW8yTcmWRdAZUKzrQzVE0CvhniUgrAQQJWFp16U5wtABZnQIHM4B0DD+UG2ykIDQILMfQP14f8/FHLDwQ9Z+j9EBLX/YsD1P0QLXBbA8fE/c9RtLMiX7T+j73EUxGToP5xVsVh2GuQ/RGo2wq+Q4D9/kCLz8EvbP3rOIWUUfdY/y2dR1MyG0j/qAROyLobOPxmgN4QjJck/EXiPT6+2xD9aJolgHhDBP/kQssd6HLw/Ss11hRMotz/ldH7NNxOzP4UrKfgGba8/3ogVOAXjqT/3bHbF8VKlP+H+nQXAkKE/ngQTHE3wnD++qewkgtaXP5wjYeLfopM/fN3MFdUskD/RvZPd7aWKPwYvKOV884U/omM6d/0Ugj8z2ts4KMp9Pxs9sQj2iXg/qTbR07E2dD+YzKKqmKZwPx7k+AOIbms/sZwlHbuYZj8ZB7dWG51iPx0lmeVnql4/MV/f5K5CWT/siM10285UP+1vLULwI1E/","dtype":"float64","order":"little","shape":[96]}},"selected":{"id":"1207"},"selection_policy":{"id":"1206"}},"id":"1016","type":"ColumnDataSource"},{"attributes":{"format":"%.3f Hz"},"id":"1006","type":"PrintfTickFormatter"},{"attributes":{},"id":"1160","type":"SaveTool"},{"attributes":{"args":{"slider":{"id":"1291"},"source":{"id":"1290"}},"code":"try { \n        if (cb_obj.value &lt; slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value &gt; slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[[140267060006048,[null,"value"],[null,null]]]},"id":"1420","type":"CustomJS"},{"attributes":{"name":"TemplateActions00261"},"id":"1180","type":"TemplateActions1"},{"attributes":{},"id":"1159","type":"ResetTool"},{"attributes":{"overlay":{"id":"1163"}},"id":"1158","type":"BoxZoomTool"}],"root_ids":["1177","1179","1181","1182","1183","1255","1278","1348","1371"]},"title":" Equivalent Circuit 'R0-(R1,C1)'","version":"2.4.3"}}
     </script>
-    <script type="text/javascript">
-      (function() {
-        const fn = function() {
-          Bokeh.safely(function() {
-            (function(root) {
+  <script type="text/javascript">
+      (function () {
+        const fn = function () {
+          Bokeh.safely(function () {
+            (function (root) {
               function embed_document(root) {
-              const docs_json = document.getElementById('1580').textContent;
-              const render_items = [{"docid":"62b57f07-3ffc-4491-a61b-d11ecb1e458f","root_ids":["1177","1179","1181","1182","1183","1255","1278","1348","1371"],"roots":{"1177":"3f91fe98-ef84-4e11-a7c2-b5f7b1746963","1179":"52076b7f-384f-4940-aa3e-63506fd0a33f","1181":"b52a8c8b-321d-4c7b-898c-76d6d730961a","1182":"dfdec5b1-9178-4589-89c8-db3ef2371f75","1183":"e8513985-6970-4ed3-ac0a-8e00b4be9cb0","1255":"fe0a9e72-9dc1-4ec3-aac7-20a146f7d102","1278":"d5e4f697-692b-44d5-8527-4deccf96fc86","1348":"a80a8dec-0bdb-43fc-86dd-1b71adeb1236","1371":"8b63135a-0591-433d-a406-483a9b96be41"}}];
-              root.Bokeh.embed.embed_items(docs_json, render_items);
+                const docs_json = document.getElementById('1580').textContent;
+                const render_items = [{ "docid": "62b57f07-3ffc-4491-a61b-d11ecb1e458f", "root_ids": ["1177", "1179", "1181", "1182", "1183", "1255", "1278", "1348", "1371"], "roots": { "1177": "3f91fe98-ef84-4e11-a7c2-b5f7b1746963", "1179": "52076b7f-384f-4940-aa3e-63506fd0a33f", "1181": "b52a8c8b-321d-4c7b-898c-76d6d730961a", "1182": "dfdec5b1-9178-4589-89c8-db3ef2371f75", "1183": "e8513985-6970-4ed3-ac0a-8e00b4be9cb0", "1255": "fe0a9e72-9dc1-4ec3-aac7-20a146f7d102", "1278": "d5e4f697-692b-44d5-8527-4deccf96fc86", "1348": "a80a8dec-0bdb-43fc-86dd-1b71adeb1236", "1371": "8b63135a-0591-433d-a406-483a9b96be41" } }];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
               }
               if (root.Bokeh !== undefined) {
                 embed_document(root);
               } else {
                 let attempts = 0;
-                const timer = setInterval(function(root) {
+                const timer = setInterval(function (root) {
                   if (root.Bokeh !== undefined) {
                     clearInterval(timer);
                     embed_document(root);
@@ -651,6 +669,7 @@
         if (document.readyState != "loading") fn();
         else document.addEventListener("DOMContentLoaded", fn);
       })();
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

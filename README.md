@@ -11,9 +11,9 @@ An easily executable `Panel` and `Pyscript` based interactive simulation of Equi
 
 ### How was the `.html` file created?
 
-`script.py` is first made with the help of `jupyter`. Then, the `script.py` is then transformed to `.html` file using `panel convert script.py --to pyscript --out`. This creates a `script.html` file in the current folder (here known as `pyscript-remote-equivalent_circuit.html`.
+Code in the `script-equivalent_circuit.py` is first made with the help of `jupyter notebook`. The `script-equivalent_circuit.py` is then transformed to `.html` file using `panel convert script-equivalent_circuit.py --to pyscript --out`. This creates a `script-equivalent_circuit.html` file in the pyscript folder (renamed to `pyscript-remote-equivalent_circuit.html`).
 
-However, this `pyscript-remote-equivalent_circuit.html` file uses remotely stored `.js` files for the `.html` file execution. This is corrected for by downloading and storing the `.js` files in a folder called `src`, and the raw `pyscript-remote-equivalent_circuit.html` is edited manually in a script editor to (`pyscript-local-equivalent_circuit.html`) use locally stored `.js` files from `src` folder.
+However, this `pyscript-remote-equivalent_circuit.html` uses  `.js` files from internet for the `.html` file execution. This is corrected for by downloading and storing the `.js` files in a folder called `src`, and the raw `pyscript-remote-equivalent_circuit.html` is edited manually in a script editor to use locally stored `.js` files from `src` folder. The file that works without internet is `pyscript-local-equivalent_circuit.html`.
 
 
 ### References
