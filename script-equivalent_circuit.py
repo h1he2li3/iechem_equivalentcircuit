@@ -27,7 +27,6 @@ c1 = pn.widgets.EditableFloatSlider(start=1e-6, end=1e-4, value=1e-5, step=1e-6,
                                     format=PrintfTickFormatter(
                                         format='%.6f F'),
                                     bar_color='#ff00ff')
-
 fstart = pn.widgets.EditableFloatSlider(start=1000 / 2, end=10000000,
                                         value=9685000, step=500,
                                         format=PrintfTickFormatter(
@@ -44,27 +43,24 @@ pts_per_decade = pn.widgets.EditableFloatSlider(start=1, end=15, value=12,
                                                 format=PrintfTickFormatter(
                                                     format='%.0f'),
                                                 bar_color='#000000')
-
 Line_and_Markers_Checkbox = pn.widgets.Checkbox(
     name='Check the box to display \'Line along with Markers\'', value=True)
-
-
-plot1width = pn.widgets.EditableIntSlider(start=200, end=800, value=525,
+plot1width = pn.widgets.EditableIntSlider(start=200, end=800, value=450,
                                           step=25,
                                           format=PrintfTickFormatter(
                                               format='%.0f #unit'),
                                           bar_color='#808080', max_width=400)
-plot2width = pn.widgets.EditableIntSlider(start=200, end=800, value=525,
+plot2width = pn.widgets.EditableIntSlider(start=200, end=800, value=450,
                                           step=25,
                                           format=PrintfTickFormatter(
                                               format='%.0f #unit'),
                                           bar_color='#808080', max_width=400)
-plot1height = pn.widgets.EditableIntSlider(start=200, end=800, value=400,
+plot1height = pn.widgets.EditableIntSlider(start=200, end=800, value=450,
                                            step=25,
                                            format=PrintfTickFormatter(
                                                format='%.0f #unit'),
                                            bar_color='#808080', max_width=400)
-plot2height = pn.widgets.EditableIntSlider(start=200, end=800, value=400,
+plot2height = pn.widgets.EditableIntSlider(start=200, end=800, value=450,
                                            step=25,
                                            format=PrintfTickFormatter(
                                                format='%.0f #unit'),
@@ -94,12 +90,12 @@ plot2_range_yaxis = pn.widgets.EditableRangeSlider(start=0, end=80,
                                                    bar_color='#ff0000')
 
 reset_button = pn.widgets.Toggle(name='Press me twice to Reset',
-                                 button_type='danger')
+                                 button_type='danger', max_width=400-20)
 plot_properties_radio = pn.widgets.RadioButtonGroup(name='Radio Button Group',
                                                     options=['Default',
                                                              'Manual'],
                                                     button_type='success',
-                                                    max_width=600)
+                                                    max_width=400-20)
 
 # Creation of Markdowns for sliders, radio and toggle buttons, etc.
 # ------------
@@ -138,16 +134,17 @@ $$Z_{R_{1}C_{1}} = \\biggl(\\frac{1}{ \\frac{1}{Z_{R_{1}}} + \\frac{1}{Z_{C_{1}}
 in words, **R0 in series with parallel of (R1, C1)**
 
 ---
-""")
+""", max_width=400)
 plot_properties_Markdown = pn.pane.Markdown("""
 #### Use the below radio button group to choose between 'Default' and 'Manual' setting for plot properties - size and range
-""")
-
+""", max_width=400)
 
 # Non-Interactive (I-0) and Interactive (I-1) Function(s)
 
 # Function 1 (I-0) to Generate angular frequency range
 # ------------
+
+
 def ang_freq_range(fstart, fstop, pts_per_decade):
     """returns an angular frequency range as a numpy array,
        between fstart [Hz] and fstop [Hz], with a set number
@@ -202,10 +199,10 @@ def reset_plot_size_values():
     default plot size slider values to overwrite existing ones in the calling
     function
     """
-    plot1width.value = 525
-    plot1height.value = 400
-    plot2width.value = 525
-    plot2height.value = 400
+    plot1width.value = 450
+    plot1height.value = 450
+    plot2width.value = 450
+    plot2height.value = 450
     return plot1width.value, plot1height.value, plot2width.value, plot2height.value
     # ------------#
 
@@ -322,11 +319,11 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
     plot1_nyquist = ColumnDataSource(data=dict(x=z.real, y=-1 * z.imag))
     plot2_bode = ColumnDataSource(data=dict(x=w / (2 * np.pi), y=-1 * z.imag))
 
-    plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
+    plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1,
                    tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
                    x_axis_label="Z Real [Ohm]",
                    y_axis_label="-Z Imaginary [Ohm]",
-                   plot_height=plot1height,
+                   width=plot1width, height=plot1width,
                    x_range=(plot1_x_left, plot1_x_right),
                    y_range=(plot1_y_bottom, plot1_y_top))
     plot1.circle('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
@@ -334,12 +331,12 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
         plot1.line('x', 'y', source=plot1_nyquist, line_width=2, color="blue")
         plot1.circle('x', 'y', source=plot1_nyquist,
                      line_width=2, color="blue")
-    plot2 = figure(name='Plot 2', title="Bode Plot",
+    plot2 = figure(name='Plot 2', title="Bode Plot", aspect_ratio=1,
                    tools="pan,wheel_zoom, box_zoom, reset, save, box_select",
                    x_axis_type="log", y_axis_type="linear",
                    x_axis_label="frequency [Hz]",
                    y_axis_label="-Z Imaginary [Ohm]",
-                   plot_height=plot2height,
+                   width=plot2width, height=plot2height,
                    x_range=(plot2_x_left, plot2_x_right),
                    y_range=(plot2_y_bottom, plot2_y_top))
     plot2.circle('x', 'y', source=plot2_bode, line_width=2, color="blue")
@@ -350,11 +347,11 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
                      line_width=2, color="blue")
 
     if setting == 'Default':
-        plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1/1,
+        plot1 = figure(name='Plot 1', title="Nyquist Plot", aspect_ratio=1,
                        tools="pan, wheel_zoom, box_zoom, reset, save, box_select",
                        x_axis_label="Z Real [Ohm]",
                        y_axis_label="-Z Imaginary [Ohm]",
-                       plot_height=plot1height,
+                       width=plot1width, height=plot1width,
                        x_range=(plot1_x_left, plot1_x_right),
                        y_range=(plot1_y_bottom, plot1_y_top))
         plot1.circle('x', 'y', source=plot1_nyquist,
@@ -364,13 +361,13 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
                        line_width=2, color="blue")
             plot1.circle('x', 'y', source=plot1_nyquist,
                          line_width=2, color="blue")
-        plot2 = figure(name='Plot 2', title="Bode Plot",
+        plot2 = figure(name='Plot 2', title="Bode Plot", aspect_ratio=1,
                        tools="pan,wheel_zoom,box_zoom,reset,save,box_select",
                        x_axis_type="log", y_axis_type="linear",
                        x_axis_label="frequency [Hz]",
                        y_axis_label='-Z Imaginary [Ohm]',
                        y_range=(plot2_y_bottom, plot2_y_top),
-                       plot_height=plot2height)
+                       width=plot2width, height=plot2height)
         plot2.circle('x', 'y', source=plot2_bode, line_width=2, color="blue")
         if line_and_markers_checkbox is True:
             plot2.line('x', 'y', source=plot2_bode,
@@ -378,10 +375,10 @@ def z(r0, r1, c1, fstart, fstop, pts_per_decade,
             plot2.circle('x', 'y', source=plot2_bode,
                          line_width=2, color="blue")
 
-    return pn.Column(pn.Tabs(plot1, width=plot1width,
-                             height=plot1height + 30, closable=True),
-                     pn.Tabs(plot2, width=plot2width,
-                             height=plot2height, closable=True))
+    return pn.Column(pn.Tabs(plot1, width=plot1width+100,
+                             height=plot1width+100, closable=True),
+                     pn.Tabs(plot2, width=plot2width+100,
+                             height=plot2height+100, closable=True))
     # ------------#
 
 
@@ -417,19 +414,19 @@ def set_and_reset_plot_size_and_limits(setting, reset):
         reset_plot_range_values()
 
     if setting == 'Default':
-        return pn.pane.Alert(text, alert_type="success", max_width=600)
+        return pn.pane.Alert(text, alert_type="success", max_width=400-10)
     return pn.Column('### Plot size',
                      pn.Accordion(('Nyquist plot width', plot1width),
                                   ('Nyquist plot height', plot1height),
                                   ('Bode plot width', plot2width),
                                   ('Bode plot height', plot2height),
-                                  max_width=600, header_color='#FFFFFF',
+                                  max_width=400, header_color='#FFFFFF',
                                   header_background='#008835',
                                   active_header_background='#008835'),
                      '### Plot range', pn.Accordion(
                          ('Nyquist plot limits', plot1_limits),
                          ('Bode plot x-axis limits', plot2_xlimits),
-                         ('Bode plot y-axis limits', plot2_ylimits), max_width=600,
+                         ('Bode plot y-axis limits', plot2_ylimits), max_width=400,
                          header_color='#FFFFFF', header_background='#008835',
                          active_header_background='#008835'))
 
@@ -465,7 +462,7 @@ def changing_variables(reset):
                          ('Measurement parameters', tab2),
                          header_color='#FFFFFF',
                          header_background='#008835',
-                         active_header_background='#008835'))
+                         active_header_background='#008835', max_width=400))
 
 
 # ------------
@@ -479,4 +476,4 @@ pn.template.GoldenTemplate(accent_base_color='#008835',
                            title=" Equivalent Circuit 'R0-(R1,C1)'",
                            sidebar=[Info_Markdown, changing_variables,
                                     reset_button, plot_properties],
-                           main=[Info]).servable(target='simple_app')
+                           main=[Info], sidebar_width=16).servable(target='simple_app')
